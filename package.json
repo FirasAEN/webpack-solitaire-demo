@@ -1,0 +1,33 @@
+{
+  "name": "solitaire",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.8.2",
+    "eslint": "^4.9.0",
+    "http-server": "^0.10.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-junit-reporter": "^1.2.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "scripts": {
+    "postinstall": "node node_modules/bower/bin/bower install",
+    "start": "http-server ./app -c-1 -p 8100 -o",
+    "serve": "webpack-dev-server",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js --single-run",
+    "cli-webpack": "webpack app/app.js --mode=development -o app/dist/bundle.js",
+    "webpack": "webpack",
+    "postwebpack": "npx webpack app/app.js --json > stats.json",
+    "pregraph": "npm run webpack",
+    "graph": "webpack-stats-graph",
+    "postgraph": "http-server ./statsgraph -c-1  -o",
+    "clean": "rm -rf app/dist app/bower_components ./node_modules"
+  }
+}
