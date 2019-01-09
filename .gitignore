@@ -1,0 +1,17 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+package-lock.json
+
+## Directory-based project format:
+.idea/
+
+## Generated webpack bundle
+/app/dist
+
+## Generated graphs and related data
+/statsgraph/
+stats.json
